@@ -2,8 +2,8 @@
 
 function movieflixtheme_setup() {
     add_theme_support( 'custom-logo', array(
-        'height'               => 900,
-        'width'                => 288,
+        'height'               => 288,
+        'width'                => 900,
         'flex-width'           => true,
     ) );
 }
