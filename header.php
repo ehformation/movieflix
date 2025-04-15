@@ -11,6 +11,7 @@
 	<link href="<?php echo get_bloginfo('stylesheet_directory')  ?>/css/index.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet">
 	<script src="<?php echo get_bloginfo('stylesheet_directory')  ?>/js/bootstrap.bundle.min.js"></script>
+	<?php wp_head(); ?>
 </head>
 <body>
 

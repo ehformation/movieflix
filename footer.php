@@ -32,19 +32,16 @@
    <div class="row footer_1">
      <div class="col-md-8">
 	  <div class="footer_1l">
-	   <p class="mb-0">© 2013 Your Website Name. All Rights Reserved | Design by <a class="col_red" href="http://www.templateonweb.com">TemplateOnWeb</a></p>
+        <?php dynamic_sidebar('footer-copy') ?>
 	  </div>
 	 </div>
 	 <div class="col-md-4">
 	  <div class="footer_1r">
-	   <ul class="mb-0">
-	    <li class="d-inline-block me-2"><a href="#">Home</a></li>
-		<li class="d-inline-block me-2"><a href="#">Features</a></li>
-		<li class="d-inline-block me-2"><a href="#">Pages</a></li>
-		<li class="d-inline-block me-2"><a href="#">Portfolio</a></li>
-		<li class="d-inline-block me-2"><a href="#">Blog</a></li>
-		<li class="d-inline-block"><a href="#">Contact</a></li>
-	   </ul>
+        <?php wp_nav_menu(array(
+			'theme_location' => 'menu-bottom',
+			'menu_class' => 'mb-0',
+            'walker' => new WP_Bottom_Menu_Walker()
+		)) ?>
 	  </div>
 	 </div>
    </div>
@@ -68,7 +65,7 @@ function myFunction() {
   }
 }
 </script>
-
+<?php wp_footer(); ?>
 </body>
 
 </html>
