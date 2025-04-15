@@ -64,3 +64,36 @@
  </div>
 </div>
 </section>
+
+<section id="header">
+<nav class="navbar navbar-expand-md navbar-light" id="navbar_sticky">
+  <div class="container">
+	<?php 
+		if( function_exists( 'the_custom_logo' ) ) {
+			$custom_logo_id = get_theme_mod( 'custom_logo' );
+			$custom_logo_src = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+
+			if( has_custom_logo() ) {
+				echo '<a class="navbar-brand text-white fw-bold" href="' . esc_url( home_url('/') ) . '" >';
+				echo '<img src="' . $custom_logo_src[0] . '" style="max-width: 100px" />';
+				echo '</a>';
+			}else{
+				echo '<h2>' . get_bloginfo('name') . '</h2>';
+			}
+		}
+	?>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+	<?php wp_nav_menu(array(
+		'theme_location' => 'menu-principal',
+		'container' => 'div',
+		'container_class' => 'collapse navbar-collapse',
+		'container_id' => 'navbarSupportedContent',	
+		'menu_class' => 'navbar-nav mb-0',	
+		'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback', 
+		'walker' => new WP_Bootstrap_Navwalker()
+	)) ?>
+  </div>
+</nav>
+</section>
