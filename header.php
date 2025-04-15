@@ -48,13 +48,17 @@
   </div>
   <div class="col-md-4">
    <div class="top_1r text-end">
-     <ul class="social-network social-circle mb-0">
+		<?php wp_nav_menu(array(
+			'theme_location' => 'menu-social',
+			'menu_class' => 'social-network social-circle mb-0'
+		)) ?>
+     <!-- <ul class="social-network social-circle mb-0">
 			<li><a href="#" class="icoRss" title="Rss"><i class="fa fa-instagram"></i></a></li>
 			<li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
 			<li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
 			<li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-youtube"></i></a></li>
 			<li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-		</ul>
+		</ul> -->
    </div>
   </div>
  </div>

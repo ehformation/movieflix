@@ -6,5 +6,8 @@ function movieflixtheme_setup() {
         'width'                => 900,
         'flex-width'           => true,
     ) );
+    register_nav_menus(array(
+        'menu-social' => 'Menu des réseaux sociaux (top)'
+    ));
 }
 add_action('after_setup_theme', 'movieflixtheme_setup');
