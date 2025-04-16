@@ -58,7 +58,7 @@
                                 <ul>
                                     <?php if($tags) : ?>
                                         <?php foreach ($tags as $tag) :  ?>
-                                            <li class="d-inline-block me-3"><a href="<?php esc_url(get_tag_link($tag->term_id)) ?>"><i class="fa fa-tag me-1 col_red"></i> <?php echo $tag->name ?></a>
+                                            <li class="d-inline-block me-3"><a href="<?php echo esc_url(get_tag_link($tag->term_id)) ?>"><i class="fa fa-tag me-1 col_red"></i> <?php echo $tag->name ?></a>
                                             </li>
                                         <?php endforeach; ?>
                                     <?php endif; ?>
