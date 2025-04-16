@@ -1,6 +1,7 @@
 <?php 
 require_once get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 require_once get_template_directory() . '/inc/class-wp-bottom-menu-walker.php';
+require_once get_template_directory() . '/inc/mf-shortcode.php';
 
 function movieflixtheme_setup() {
     add_theme_support( 'custom-logo', array(
