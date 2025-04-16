@@ -8,6 +8,7 @@ function movieflixtheme_setup() {
         'width'                => 900,
         'flex-width'           => true,
     ) );
+    add_theme_support('post-thumbnails');
     register_nav_menus(array(
         'menu-social' => 'Menu des réseaux sociaux (top)',
         'menu-principal' => 'Menu principal (center top)',
