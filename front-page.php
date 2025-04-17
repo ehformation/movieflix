@@ -4,4 +4,6 @@
 
 <?php echo do_shortcode('[latest_movies_carousel]'); ?>
 
+<?php echo do_shortcode('[battle_movie]'); ?>
+
 <?php get_footer(); ?>
