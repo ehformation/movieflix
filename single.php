@@ -64,11 +64,48 @@
                                     <?php endif; ?>
                                 </ul>
                             </div>
+                            <div class="blog_1l3 mt-4">
+                                <h3>Commentaire récents</h3>
+                                <?php if(have_comments()) : ?>
+                                    <div class="blog_1l5 mt-3">
+                                        <?php 
+                                            wp_list_comments( array(
+                                                'style' => 'div',
+                                                'type' => 'comment',
+                                                'avatar_size' => 60,
+                                                'short_ping' => true,
+                                                'callback' => 'movieflix_comments'
+                                            ));
+                                        ?>
+                                    </div>
+                                <?php else : ?>
+                                    <p class="mt-3">Aucun commentaire pour le moment. Soyez le premier à réagir !</p>
+                                <?php endif; ?>
+                            </div>
+                            
+                            <?php 
+                                comment_form([
+                                    'title_reply' => '<div class="blog_1l3 mt-4"><h3>Laisser un commentaire</h3></div>',
+                                    'class_form' => 'blog_1l6 mt-3',
+                                    'fields' => [
+                                        'author' => '<input class="form-control" placeholder="Name" name="author" type="text">',
+                                        'email' => '<input class="form-control mt-3" placeholder="Email" name="email" type="text">',
+                                        'url' => '<input class="form-control mt-3" placeholder="Website" name="url" type="text">',
+                                    ],
+                                    'comment_field' => '<div class="blog_1dt5l"><textarea placeholder="Commentaire" class="form-control form_text" name="comment" rows="5"></textarea></div>',
+                                    'submit_button' => '<button type="submit">%4$s</button>', 
+                                    'label_submit'  => 'Commenter',
+                                ]);
+                            ?>
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+
 
     <?php endwhile; ?>
 

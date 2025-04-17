@@ -47,3 +47,39 @@ function movieflixtheme_widgets_init(){
     ));
 }
 add_action('widgets_init', 'movieflixtheme_widgets_init');
+
+function movieflix_comments($comment, $args, $depth) {
+    ?>
+    <?php exit(); ?>
+    <div class="blog_1l5 mt-3" id="comment-<?php comment_ID(); ?>">
+        <div class="blog_1l5i row">
+            <div class="col-md-2 col-2 pe-0">
+                <div class="blog_1l5il">
+                    <?php echo get_avatar($comment, 60, '', '', ['class' => 'w-100']); ?>
+                </div>
+            </div>
+            <div class="col-md-10 col-10">
+                <div class="blog_1l5ir">
+                    <h5>
+                        <a href="<?php echo esc_url(get_comment_author_url()); ?>">
+                            <?php comment_author(); ?>
+                        </a> 
+                        <span class="font_14 col_light">/ <?php echo get_comment_date(); ?></span>
+                    </h5>
+                    <p class="font_14"><?php comment_text(); ?></p>
+                    <h6 class="font_14 mb-0 mt-3">
+                        <?php 
+                        comment_reply_link([
+                            'depth'      => $depth,
+                            'max_depth'  => $args['max_depth'],
+                            'reply_text' => 'Répondre',
+                            'class'      => 'button p-3 pt-2 pb-2'
+                        ]); 
+                        ?>
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php
+}
